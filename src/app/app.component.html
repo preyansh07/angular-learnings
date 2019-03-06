@@ -68,7 +68,7 @@
 
 <h3>Multiple with integer keys and interpolation to value</h3>
 
-<select name="cars" id="cars" [(ngModel)]="selectedCarsWithIntegerKeys" multiple>
+<select name="cars" id="cars" [(ngModel)]="x" multiple>
   <option value="{{car.key}}" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
 </select>
 
@@ -96,4 +96,9 @@
 
 <select name="cars" id="cars" [(ngModel)]="selectedCarsWithIntegerKeys" multiple>
   <option [ngValue]="car.key" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
+
+<h3>Use of ngValue:</h3>
+<select name="cars" id="cars" [(ngModel)]="car">
+  <option [ngValue]="car" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
 </select>

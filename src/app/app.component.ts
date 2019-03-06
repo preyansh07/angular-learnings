@@ -20,7 +20,7 @@ export class AppComponent {
     },
     {
       key: 'frd',
-      value: 'ford'
+      value: 'Ford'
     },
     {
       key: 'mhr',
@@ -32,7 +32,7 @@ export class AppComponent {
     },
     {
       key: 'vgn',
-      value: 'Volkeswagon'
+      value: 'Volkswagan'
     },
     {
       key: 'nsn',
@@ -47,7 +47,7 @@ export class AppComponent {
     },
     {
       key: 2,
-      value: 'ford'
+      value: 'Ford'
     },
     {
       key: 3,
@@ -59,7 +59,7 @@ export class AppComponent {
     },
     {
       key: 5,
-      value: 'Volkeswagon'
+      value: 'Volkswagen'
     },
     {
       key: 6,
@@ -74,5 +74,15 @@ export class AppComponent {
   selectedCarWithIntegerKey = 1;
 
   selectedCarsWithIntegerKeys: number[] = [1, 4];
+
+  x = ['1', '4'];
+
+  carsObject = [{ 1: 'Toyota' }, { 2: 'Ford' }, { 3: 'Mahindra' }, { 4: 'Maruti' }, { 5: 'Volkswagen' }, { 6: 'Nissan' }];
+
+  carObject = { 1: 'Toyota' };
+
+  // car = { key: 1, value: 'Toyota' };
+
+  car = this.carsWithIntegerKeys[0];
 
 }
