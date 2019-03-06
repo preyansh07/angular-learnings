@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img width="300" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
@@ -16,6 +17,83 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
 <router-outlet></router-outlet>
+
+<h3>Single with string keys and interpolation to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarWithStringKey">
+  <option value="{{car.key}}" *ngFor="let car of carsWithStringKeys">{{car.value}}</option>
+</select>
+
+<h3>Multiple with string keys and interpolation to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarsWithStringKeys" multiple>
+  <option value="{{car.key}}" *ngFor="let car of carsWithStringKeys">{{car.value}}</option>
+</select>
+
+
+<h3>Single with string keys and property binding to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarWithStringKey">
+  <option [value]="car.key" *ngFor="let car of carsWithStringKeys">{{car.value}}</option>
+</select>
+
+<h3>Multiple with string keys and property binding to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarsWithStringKeys" multiple>
+  <option [value]="car.key" *ngFor="let car of carsWithStringKeys">{{car.value}}</option>
+</select>
+
+
+<h3>Single with string keys and property binding to ngValue</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarWithStringKey">
+  <option [ngValue]="car.key" *ngFor="let car of carsWithStringKeys">{{car.value}}</option>
+</select>
+
+<h3>Multiple with string keys and property binding to ngValue</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarsWithStringKeys" multiple>
+  <option [ngValue]="car.key" *ngFor="let car of carsWithStringKeys">{{car.value}}</option>
+</select>
+
+
+<h3>Single with integer keys and interpolation to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarWithIntegerKey">
+  <option value="{{car.key}}" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
+
+<h3>Multiple with integer keys and interpolation to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarsWithIntegerKeys" multiple>
+  <option value="{{car.key}}" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
+
+
+<h3>Single with integer keys and property binding to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarWithIntegerKey">
+  <option [value]="car.key" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
+
+<h3>Multiple with integer keys and property binding to value</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarsWithIntegerKeys" multiple>
+  <option [value]="car.key" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
+
+
+<h3>Single with integer keys and property binding to ngValue</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarWithIntegerKey">
+  <option [ngValue]="car.key" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
+
+<h3>Multiple with integer keys and property binding to ngValue</h3>
+
+<select name="cars" id="cars" [(ngModel)]="selectedCarsWithIntegerKeys" multiple>
+  <option [ngValue]="car.key" *ngFor="let car of carsWithIntegerKeys">{{car.value}}</option>
+</select>
